@@ -1,0 +1,10 @@
+.parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.italic {
+  font-style: italic;
+}

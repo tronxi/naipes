@@ -1,0 +1,20 @@
+<div class="card text-center record">
+  <div class="card-body">
+    <h5 class="card-title text-center">Records generales</h5>
+    <div class="row principal-row">
+      <div class="col offset-2">Usuario</div>
+      <div class="col">Ptos.</div>
+      <div class="col">Cartas</div>
+      <div class="col">Segs.</div>
+      <div class="col">Fecha</div>
+    </div>
+    <div class="row" *ngFor="let record of records; let i = index">
+      <div class="col">{{i}}</div>
+      <div class="col">{{record.username}}</div>
+      <div class="col">{{record.punctuation}}</div>
+      <div class="col">{{record.cards}}</div>
+      <div class="col">{{record.disposedTime}}</div>
+      <div class="col">{{formatDate(record.recordDate)}}</div>
+    </div>
+  </div>
+</div>

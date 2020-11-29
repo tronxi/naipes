@@ -1,8 +1,8 @@
-.content {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  width: 80%;
+.principal-row {
+  font-weight: bold;
+}
+.record {
+  width: 600px;
   height: min-content;
   background-color: #ffcc80;
   padding: 10px;

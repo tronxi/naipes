@@ -1,0 +1,46 @@
+<div class="card content">
+  <div class="card-body">
+    <h5 class="card-title text-center">Registro de usuario</h5>
+    <div id="registro-form">
+      <form class="container card-text" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="row margin-row">
+        <label for="user" class="offset-2 col-4">
+          Usuario:
+        </label>
+        <input type="text" id="user" placeholder="Identificador de usuario" (blur)="checkName()" (change)="setInvalid()" formControlName="user">
+      </div>
+
+      <div class="row margin-row">
+        <label for="mail" class="offset-2 col-4">
+          Correo:
+        </label>
+        <input type="text" id="mail" placeholder="Email" formControlName="email">
+      </div>
+
+      <div class="row margin-row">
+        <label for="key" class="offset-2 col-4">
+          Clave:
+        </label>
+        <input type="password" id="key" placeholder="Clave" formControlName="password">
+      </div>
+
+      <div class="row margin-row">
+        <label for="secondKey" class="offset-2 col-4">
+          Repita la clave:
+        </label>
+        <input type="password" id="secondKey" placeholder="Repita la clave" formControlName="secondPassword">
+      </div>
+
+      <div class="row margin-row">
+        <button class="btn btn-primary offset-6 col-2" id="send-registro" [disabled]="isValid()">Enviar</button>
+      </div>
+    </form>
+    </div>
+    <div class="alert alert-danger" id="password-alert" *ngIf= "registerForm.get('user').touched && registerForm.get('user').errors?.userName">
+      El usuario ya existe
+    </div>
+    <div class="alert alert-danger" *ngIf="error" hidden>
+      Error en el registro
+    </div>
+  </div>
+</div>

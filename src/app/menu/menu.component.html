@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="home" id="home-image">
+    <img src="/assets/upm.jpg" width="50" height="50" class="d-inline-block" alt="">
+    <span class="link">
+            U.P.M.
+        </span>
+  </a>
+  <div class="collapse navbar-collapse mi-nav">
+    <div class="navbar-nav">
+      <a class="nav-link active" routerLink="home" id="home">
+                <span class="link">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    Inicio
+                </span>
+      </a>
+      <a class="nav-link active" routerLink="preferences" id="preferences">
+                <span class="link">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                    Preferencias
+                </span>
+      </a>
+      <a class="nav-link active" routerLink="game" id="game">
+                <span class="link">
+                    <i class="fa fa-play" aria-hidden="true"></i>
+                    Jugar
+                </span>
+      </a>
+      <a class="nav-link active" routerLink="records" id="records">
+                <span class="link">
+                    <i class="fa fa-trophy" aria-hidden="true"></i>
+                    Records
+                </span>
+      </a>
+    </div>
+  </div>
+  <div *ngIf="!this.tokenService.exist">
+    <div class="collapse navbar-nav navbar-collapse mi-nav">
+      <a class="nav-link active" routerLink="registro" id="registro">
+                <span class="link">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    Registro
+                </span>
+      </a>
+      <a class="nav-link active" routerLink="login" id="login">
+                <span class="link">
+                  <i class="fas fa-sign-in-alt"></i>
+                  Login
+                </span>
+      </a>
+    </div>
+  </div>
+  <div *ngIf="this.tokenService.exist">
+    <div class="collapse navbar-nav navbar-collapse mi-nav">
+      <a class="nav-link active" id="logOut" (click)="logOut()">
+        <span class="link">
+          <i class="fas fa-sign-out-alt"></i>
+          LogOut
+        </span>
+      </a>
+    </div>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".mi-nav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>

@@ -1,0 +1,38 @@
+.card-div {
+  margin: 2px;
+  width: 100px;
+  height: 130px;
+}
+
+.card-image {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.timer {
+  text-align: center;
+  margin-top: 50px;
+  margin-left: auto;
+  width: 100px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.timer-item {
+  background-color: #ffcc80;
+  border-radius: 5px;
+}
+
+.win-btn {
+  margin: 5px;
+}

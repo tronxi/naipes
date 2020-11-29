@@ -1,0 +1,9 @@
+.parent {
+  margin-top: 50px;
+  /*width: 80%;*/
+  height: min-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+

@@ -1,0 +1,30 @@
+<div class="card content">
+  <div class="card-body">
+    <h5 class="card-title text-center">Preferencias</h5>
+    <div class="row margin-row">
+      <label for="num-cards" class="offset-2 col-4">
+        Numero de imagenes:
+      </label>
+      <select class="col-2 selectpicker" id="num-cards" [(ngModel)]="numCards">
+        <option>20</option>
+        <option>26</option>
+        <option>32</option>
+      </select>
+    </div>
+    <div class="row margin-row">
+      <label for="time" class="offset-2 col-4">
+        Tiempo
+      </label>
+      <select class="selectpicker col-2" id="time" [(ngModel)]="time">
+        <option>0</option>
+        <option>60</option>
+        <option>90</option>
+        <option>120</option>
+        <option>150</option>
+      </select>
+    </div>
+    <div class="row margin-row">
+      <button class="btn btn-primary offset-6 col-2" (click)="savePreferences()">Aceptar</button>
+    </div>
+  </div>
+</div>

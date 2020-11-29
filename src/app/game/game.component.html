@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="timer">
+    <div class="timer-item">
+      <div>Puntuacion</div>
+      <div id="score">{{score}}</div>
+    </div>
+    <div class="timer-item">
+      <div>Tiempo</div>
+      <div>{{time}}</div>
+    </div>
+  </div>
+  <div class="card content">
+    <div class="alert alert-info" *ngIf="showWin">
+      <div>
+        Has ganado!
+      </div>
+      <div>
+        Puntuacion: {{score}}
+      </div>
+      <div>
+        <button class="btn btn-info win-btn" *ngIf="this.tokenService.exist" (click)="saveScore()">Guardar</button>
+        <button class="btn btn-info win-btn" (click)="resetGame()">Volver a Jugar</button>
+      </div>
+    </div>
+    <div class="alert alert-success" *ngIf="showSavedScore">
+      Puntuacion Guardada!
+    </div>
+    <div class="alert alert-warning" *ngIf="showLose">
+      <div>
+        Has perdido!
+      </div>
+      <div>
+        <button class="btn btn-danger" (click)="resetGame()">Volver a Jugar</button>
+      </div>
+    </div>
+    <div class="board" id="board">
+      <div *ngFor="let card of cards; let index = index" class="card-div" (click)="processClick(index)">
+        <img src="assets/naipes/{{card.image}}.jpg" class="card-image">
+      </div>
+    </div>
+  </div>
+</div>

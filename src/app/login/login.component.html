@@ -1,0 +1,27 @@
+<div class="card content">
+  <div class="card-body">
+    <h5 class="card-title text-center">Identificación de usuario</h5>
+    <div id="login-form">
+      <form class="container card-text" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="row margin-row">
+          <label for="user-login" class="offset-2 col-4">
+            Usuario:
+          </label>
+          <input type="text" id="user-login" placeholder="Identificador de usuario" formControlName="user">
+        </div>
+
+        <div class="row margin-row">
+          <label for="key-login" class="offset-2 col-4">
+            Clave:
+          </label>
+          <input type="password" id="key-login" placeholder="Clave" formControlName="password">
+        </div>
+
+        <div class="row margin-row">
+          <button class="btn btn-primary offset-6 col-2" id="send-login" [disabled]="loginForm.invalid">Enviar</button>
+        </div>
+      </form>
+    </div>
+    <div class="alert alert-danger" *ngIf="showError">Usuario Incorrecto</div>
+  </div>
+</div>
